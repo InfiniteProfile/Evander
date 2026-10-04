@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>EVANDER — The Infinite Profile</title>
+<meta name="description" content="EVANDER is an infinite profile directory. One identity, infinite states. Scroll, search, or jump straight to any profile ID.">
+<meta name="theme-color" content="#070A0F">
+<meta property="og:type" content="website">
+<meta property="og:title" content="EVANDER — The Infinite Profile">
+<meta property="og:description" content="One identity. Infinite states. Explore beyond the profile.">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="EVANDER — The Infinite Profile">
+<meta name="twitter:description" content="One identity. Infinite states. Explore beyond the profile.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20512%20512'%3E%3Crect%20width='512'%20height='512'%20rx='96'%20fill='%23070A0F'/%3E%3Ctext%20x='256'%20y='340'%20text-anchor='middle'%20font-family='Georgia,serif'%20font-size='280'%20fill='%23F2F4F7'%3EE%3C/text%3E%3C/svg%3E">
+<link rel="manifest" href="manifest.json">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<section id="intro" class="intro" aria-label="Welcome to EVANDER">
+  <div class="intro-inner">
+    <p class="intro-mark">EVANDER</p>
+    <p class="intro-line">ONE IDENTITY. INFINITE STATES.</p>
+    <button id="enter" class="btn btn-primary" type="button">EXPLORE PROFILES</button>
+  </div>
+</section>
+
+<main id="app" hidden>
+  <header class="masthead">
+    <h1 class="brand">EVANDER</h1>
+    <p class="tagline">ONE IDENTITY. INFINITE STATES.</p>
+    <p class="tagline2">EXPLORE BEYOND THE PROFILE.</p>
+  </header>
+
+  <div id="toolbar" class="toolbar" role="search">
+    <div class="toolbar-in">
+      <input id="q" class="search" type="search" placeholder="Search profiles..." aria-label="Search profiles by name, username, keyword or profile ID" autocomplete="off" autocapitalize="off" spellcheck="false" enterkeyhint="search">
+      <div class="tabs" role="group" aria-label="Directory views">
+        <button class="tab" type="button" data-tab="browse" aria-pressed="true">Browse</button>
+        <button class="tab" type="button" data-tab="saved" id="tabSaved" aria-pressed="false">Saved</button>
+        <button class="tab" type="button" data-tab="recent" aria-pressed="false">Recent</button>
+      </div>
+    </div>
+  </div>
+
+  <p id="status" class="status" aria-live="polite"></p>
+
+  <div class="wrap">
+    <div id="dir" class="dir">
+      <div id="vlist" class="vlist"></div>
+      <div id="flist" class="flist" hidden></div>
+      <div id="more" class="more" hidden><button id="moreBtn" class="btn" type="button">Keep searching</button></div>
+    </div>
+  </div>
+</main>
+
+<div id="modal" class="modal" hidden>
+  <div class="modal-backdrop" data-close></div>
+  <div id="panel" class="modal-panel" role="dialog" aria-modal="true" aria-labelledby="pm-name" tabindex="-1">
+    <div class="modal-bar"><button id="closeBtn" class="close" type="button" data-close aria-label="Close profile">&times;</button></div>
+    <div id="scroller" class="modal-scroll"><div id="pm-body"></div></div>
+  </div>
+</div>
+
+<div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
+
+<noscript><p style="padding:24px;text-align:center;color:#AAB3BF">EVANDER needs JavaScript to generate profiles.</p></noscript>
+<script src="script.js"></script>
+</body>
+</html>
